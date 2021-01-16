@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1097502891280",
+    "project_id": "freefeed-3ed88",
+    "storage_bucket": "freefeed-3ed88.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1097502891280:android:6f3726ede2d93bd7a2d995",
+        "android_client_info": {
+          "package_name": "com.example.FreeFeed"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1097502891280-r9j2s0m9ng107c1vkav7gkeahh9cqe7b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCk2ORx_Mxzs-swuIW2reiMx02NILNzJS0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1097502891280-r9j2s0m9ng107c1vkav7gkeahh9cqe7b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
