@@ -6,7 +6,6 @@ import 'package:firebase_core/firebase_core.dart';
 import './screens/auth_screen.dart';
 import './screens/home_screen.dart';
 import 'package:FreeFeed/screens/ngo.dart';
-import 'package:location/location.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 void main() async {

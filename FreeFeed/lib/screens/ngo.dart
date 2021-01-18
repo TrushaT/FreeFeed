@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:FreeFeed/maps/locations.dart' as locations;
+import 'package:location/location.dart';
 
 class NGOLocation extends StatefulWidget {
   @override
@@ -14,21 +15,55 @@ class _NGOLocationState extends State<NGOLocation> {
   GoogleMapController controller;
 
   Future<void> _onMapCreated(GoogleMapController controller) async {
-    // void _setMapStyle() async {
-    //   String style = await DefaultAssetBundle.of(context)
-    //       .loadString('assets/mapstyle.json');
-    //   controller.setMapStyle(style);
-    // }
+    GeolocationStatus permissionStatus;
+
+    Location location = new Location();
+    bool _serviceEnabled;
+    PermissionStatus _permissionGranted;
+
+    _serviceEnabled = await location.serviceEnabled();
+if (!_serviceEnabled) {
+  _serviceEnabled = await location.requestService();
+  if (!_serviceEnabled) {
+    return;
+  }
+}
+
+_permissionGranted = await location.hasPermission();
+if (_permissionGranted == PermissionStatus.denied) {
+  _permissionGranted = await location.requestPermission();
+  if (_permissionGranted != PermissionStatus.granted) {
+    return;
+  }
+}
+
+   
+    
 
     var currentLocation = await Geolocator()
-        .getCurrentPosition(desiredAccuracy: LocationAccuracy.best);
-    print(currentLocation);
-    // _setMapStyle();
+        .getCurrentPosition();
+
     final NGOLocation = await locations.getLocations();
+
+    List<locations.NGOs> finallist = [];
+
+    for (final location in NGOLocation.results) {
+      print("inside loop");
+      double distance = await Geolocator().distanceBetween(
+          currentLocation.latitude,
+          currentLocation.longitude,
+          location.position[0],
+          location.position[1]);
+
+      print(distance);
+      if (distance <= 2000) {
+        // NGOLocation.results.remove(location);
+        finallist.add(location);
+      }
+    }
+
     setState(() {
-      // _markers.clear();
-      for (final location in NGOLocation.results) {
-        
+      for (final location in finallist) {
         final marker = Marker(
           markerId: MarkerId(location.title),
           position: LatLng(location.position[0], location.position[1]),
@@ -46,7 +81,7 @@ class _NGOLocationState extends State<NGOLocation> {
         infoWindow: InfoWindow(title: 'Your Location'),
         icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueGreen),
       );
-      print(currentLocation.latitude + currentLocation.longitude);
+
       _markers["curr_loc"] = marker1;
       controller.animateCamera(
         CameraUpdate.newCameraPosition(

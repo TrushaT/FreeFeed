@@ -29,7 +29,7 @@ dependencies:
   firebase_storage: ^7.0.0
   google_maps_flutter: ^0.5.27+3
   geolocator: ^5.1.4+2
-  location: ^3.0.0
+  location: ^3.2.1
   http: ^0.12.1
   json_serializable: ^3.3.0
 
