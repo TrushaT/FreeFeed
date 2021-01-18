@@ -5,6 +5,9 @@ import 'package:firebase_core/firebase_core.dart';
 
 import './screens/auth_screen.dart';
 import './screens/home_screen.dart';
+import 'package:FreeFeed/screens/ngo.dart';
+import 'package:location/location.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,6 +17,7 @@ void main() async {
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
+  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -39,7 +43,7 @@ class MyApp extends StatelessWidget {
         return Center(child: CircularProgressIndicator(),);
       }
       if(userSnapshot.hasData){
-        return HomeScreen();
+        return NGOLocation();
       }
       return AuthScreen();
     },)
