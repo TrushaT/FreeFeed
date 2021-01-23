@@ -1,9 +1,12 @@
 import 'dart:collection';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:FreeFeed/maps/locations.dart' as locations;
 import 'package:location/location.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class NGOLocation extends StatefulWidget {
   @override
@@ -11,6 +14,16 @@ class NGOLocation extends StatefulWidget {
 }
 
 class _NGOLocationState extends State<NGOLocation> {
+  //Testing
+//  @override
+//  void initState() {
+//    final user = FirebaseAuth.instance.currentUser;
+//    FirebaseFirestore.instance.collection('users').doc(user.uid).get().then((value){
+//      print(user.email);
+//      print(value['role']);
+//    });
+//    super.initState();
+//  }
   final Map<String, Marker> _markers = {}; //declaring markers map
   GoogleMapController controller;
 
@@ -95,12 +108,13 @@ if (_permissionGranted == PermissionStatus.denied) {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context){
     return MaterialApp(
         home: Scaffold(
       appBar: AppBar(
         title: const Text('Locations'),
         backgroundColor: Colors.green[700],
+        actions: [FlatButton(child: Text('Logout'), onPressed:() => FirebaseAuth.instance.signOut(),)],
       ),
       body: GoogleMap(
         initialCameraPosition: CameraPosition(
