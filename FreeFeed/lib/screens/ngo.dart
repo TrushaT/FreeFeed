@@ -8,6 +8,8 @@ import 'package:location/location.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+import './chat_screen.dart';
+
 class NGOLocation extends StatefulWidget {
   @override
   _NGOLocationState createState() => _NGOLocationState();
@@ -21,6 +23,7 @@ class _NGOLocationState extends State<NGOLocation> {
 //    FirebaseFirestore.instance.collection('users').doc(user.uid).get().then((value){
 //      print(user.email);
 //      print(value['role']);
+
 //    });
 //    super.initState();
 //  }
@@ -35,26 +38,22 @@ class _NGOLocationState extends State<NGOLocation> {
     PermissionStatus _permissionGranted;
 
     _serviceEnabled = await location.serviceEnabled();
-if (!_serviceEnabled) {
-  _serviceEnabled = await location.requestService();
-  if (!_serviceEnabled) {
-    return;
-  }
-}
+    if (!_serviceEnabled) {
+      _serviceEnabled = await location.requestService();
+      if (!_serviceEnabled) {
+        return;
+      }
+    }
 
-_permissionGranted = await location.hasPermission();
-if (_permissionGranted == PermissionStatus.denied) {
-  _permissionGranted = await location.requestPermission();
-  if (_permissionGranted != PermissionStatus.granted) {
-    return;
-  }
-}
+    _permissionGranted = await location.hasPermission();
+    if (_permissionGranted == PermissionStatus.denied) {
+      _permissionGranted = await location.requestPermission();
+      if (_permissionGranted != PermissionStatus.granted) {
+        return;
+      }
+    }
 
-   
-    
-
-    var currentLocation = await Geolocator()
-        .getCurrentPosition();
+    var currentLocation = await Geolocator().getCurrentPosition();
 
     final NGOLocation = await locations.getLocations();
 
@@ -108,13 +107,22 @@ if (_permissionGranted == PermissionStatus.denied) {
   }
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
       appBar: AppBar(
         title: const Text('Locations'),
         backgroundColor: Colors.green[700],
-        actions: [FlatButton(child: Text('Logout'), onPressed:() => FirebaseAuth.instance.signOut(),)],
+        actions: [
+          FlatButton(
+            child: Text('Logout'),
+            onPressed: () => FirebaseAuth.instance.signOut(),
+          ),
+          FlatButton(
+            child: Text('Chat Screen'),
+            onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => ChatScreen())),
+          ),
+        ],
       ),
       body: GoogleMap(
         initialCameraPosition: CameraPosition(
