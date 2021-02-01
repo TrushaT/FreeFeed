@@ -7,8 +7,10 @@ import 'package:FreeFeed/maps/locations.dart' as locations;
 import 'package:location/location.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-
 import './chat_screen.dart';
+import 'NGO/homescreen.dart';
+import 'donateform.dart';
+import 'NGO/homescreen.dart';
 
 class NGOLocation extends StatefulWidget {
   @override
@@ -110,29 +112,38 @@ class _NGOLocationState extends State<NGOLocation> {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
-      appBar: AppBar(
-        title: const Text('Locations'),
-        backgroundColor: Colors.green[700],
-        actions: [
-          FlatButton(
-            child: Text('Logout'),
-            onPressed: () => FirebaseAuth.instance.signOut(),
-          ),
-          FlatButton(
-            child: Text('Chat Screen'),
-            onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => ChatScreen())),
-          ),
-        ],
-      ),
-      body: GoogleMap(
-        initialCameraPosition: CameraPosition(
-          target: LatLng(20.5937, 78.9629),
-          zoom: 6,
-        ),
-        onMapCreated: _onMapCreated,
-        markers: _markers.values.toSet(),
-        myLocationEnabled: true,
-      ),
-    ));
+            appBar: AppBar(
+              title: const Text('Locations'),
+              backgroundColor: Colors.green[700],
+              actions: [
+                FlatButton(
+                  child: Text('Logout'),
+                  onPressed: () => FirebaseAuth.instance.signOut(),
+                ),
+                FlatButton(
+                  child: Text('Chat Screen'),
+                  onPressed: () => Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (_) => ChatScreen())),
+                ),
+              ],
+            ),
+            body: GoogleMap(
+              initialCameraPosition: CameraPosition(
+                target: LatLng(20.5937, 78.9629),
+                zoom: 6,
+              ),
+              onMapCreated: _onMapCreated,
+              markers: _markers.values.toSet(),
+              myLocationEnabled: true,
+            ),
+            floatingActionButton: FloatingActionButton.extended(
+                icon: const Icon(Icons.add),
+                label: Text('Donate'),
+                onPressed: () => Navigator.of(context).push(
+                    MaterialPageRoute(builder: (_) => DonationForm())),
+                    
+        )
+        ));
+
   }
 }
