@@ -1,4 +1,5 @@
 import 'dart:collection';
+import 'package:FreeFeed/screens/home_screen.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -113,17 +114,22 @@ class _NGOLocationState extends State<NGOLocation> {
     return MaterialApp(
         home: Scaffold(
             appBar: AppBar(
-              title: const Text('Locations'),
-              backgroundColor: Colors.green[700],
+              title: const Text('Locate NGO'),
+              backgroundColor: Colors.cyan[300],
               actions: [
+                FlatButton(
+                  child: Text('Chat'),
+                  onPressed: () => Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (_) => ChatScreen())),
+                ),
+                FlatButton(
+                  child: Text('Home'),
+                  onPressed: () => Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (_) => HomeScreen())),
+                ),
                 FlatButton(
                   child: Text('Logout'),
                   onPressed: () => FirebaseAuth.instance.signOut(),
-                ),
-                FlatButton(
-                  child: Text('Chat Screen'),
-                  onPressed: () => Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (_) => ChatScreen())),
                 ),
               ],
             ),

@@ -1,3 +1,4 @@
+import 'package:FreeFeed/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
@@ -31,13 +32,14 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+      primarySwatch: Colors.blue,
         // This makes the visual density adapt to the platform that you run
         // the app on. For desktop platforms, the controls will be smaller and
         // closer together (more dense) than on mobile platforms.
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+      visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: StreamBuilder(stream: FirebaseAuth.instance.authStateChanges(), builder: (ctx, userSnapshot){
+      home: new HomeScreen(),
+      /*home:StreamBuilder(stream: FirebaseAuth.instance.authStateChanges(), builder: (ctx, userSnapshot){
       if(userSnapshot.connectionState == ConnectionState.waiting){
         return Center(child: CircularProgressIndicator(),);
       }
@@ -45,7 +47,7 @@ class MyApp extends StatelessWidget {
         return NGOLocation();
       }
       return AuthScreen();
-    },)
+    },)*/
     );
   }
 }
