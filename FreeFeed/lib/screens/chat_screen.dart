@@ -29,6 +29,7 @@ class _ChatScreenState extends State<ChatScreen> {
             NewMessage(),
           ],
         ),
+        
       ),
     );
   }

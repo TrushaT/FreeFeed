@@ -1,5 +1,6 @@
 import 'package:FreeFeed/screens/auth_screen.dart';
 import 'package:FreeFeed/screens/ngo.dart';
+import 'package:FreeFeed/widgets/favourite_ngos.dart';
 import 'package:flutter/material.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
@@ -35,12 +36,51 @@ class HomeScreen extends StatelessWidget {
                 ),
               ],
             ),
-
+            body: Column(
+        children: <Widget>[
           
-            
-                    
-        )
-        );
+          Expanded(
+            child: Column(
+              children: <Widget>[
+            Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                   Text(
+                  'Favorite NGOs',
+                  style: TextStyle(
+                    color: Colors.blueGrey,
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 1.0,
+                  ),
+                ),
+                Text(
+                  'Fav ngos will come here',
+                  style: TextStyle(
+                    color: Colors.blueGrey,
+                    fontSize: 12.0,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 1.0,
+                  ),
+                ),
+                
+                  
+                ],
+                
+
+              ),
+              
+            ),
+        
+        ],
+      ),
+      )
+        ]
+    )
+   )
+    );
 
   }
 }
