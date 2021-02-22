@@ -8,9 +8,7 @@ import 'package:location/location.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import './chat_screen.dart';
-import 'NGO/homescreen.dart';
 import 'donateform.dart';
-import 'NGO/homescreen.dart';
 
 class NGOLocation extends StatefulWidget {
   @override

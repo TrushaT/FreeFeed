@@ -4,8 +4,8 @@ import 'package:FreeFeed/widgets/donation_toast.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:FreeFeed/models/donation.dart';
 import 'package:FreeFeed/widgets/constants.dart';
-import 'NGO/request_ngo.dart';
-import 'NGO/donationrequestlist.dart';
+import '../NGO/request_ngo.dart';
+import '../NGO/donationrequestlist.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:FreeFeed/models/NGO.dart';
 
