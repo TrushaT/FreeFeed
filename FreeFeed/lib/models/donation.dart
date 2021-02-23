@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Donation {
+  // final String uid;
   final String description;
   final String food_quantity;
 

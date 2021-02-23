@@ -3,10 +3,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:FreeFeed/models/users.dart';
 
 class AuthService {
-  final FirebaseAuth _auth = FirebaseAuth.instance;
+  // final FirebaseAuth _auth = FirebaseAuth.instance;
   final CollectionReference userCollection =
       FirebaseFirestore.instance.collection('users');
   General_User u;
+  String role;
 
   General_User _userFromFirebaseUser(DocumentSnapshot querySnapshot) {
     String uid = querySnapshot.data()['uid'];
@@ -16,15 +17,18 @@ class AuthService {
     return General_User(uid: uid, username: username, email: email, role: role);
   }
 
-  Future getUserData(String uid) async {
-        DocumentReference ref = userCollection.doc(uid);
-       try {
+  getUserData(String uid) async {
+    DocumentReference ref = userCollection.doc(uid);
+    
+    try {
       await ref.get().then((querySnapshot) async {
         // print("Here 1");
-        this.u = _userFromFirebaseUser(querySnapshot);
-        return this.u.role;
+        u = _userFromFirebaseUser(querySnapshot);
+        role = u.role;
+        return role;
       });
-      return this.u;
+
+      return role;
     } catch (e) {
       return null;
     }

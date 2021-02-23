@@ -17,7 +17,8 @@ class _ChatScreenState extends State<ChatScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Chat Screen'),
+        title: Text('Chat'),
+        backgroundColor: Colors.cyan[300],
       ),
       body: Container(
         child: Column(
@@ -28,6 +29,7 @@ class _ChatScreenState extends State<ChatScreen> {
             NewMessage(),
           ],
         ),
+        
       ),
     );
   }

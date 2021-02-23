@@ -18,7 +18,7 @@ class notifyNGOService {
     return snapshot.docs.map((doc) {
       if (doc.data()['role'] == "ngo") {
         return NGO_User(
-            uid: doc.data()['uid'],
+            uid: doc.id,
             username: doc.data()['username'],
             latitude: doc.data()['latitude'],
             longitude: doc.data()['longitude'],
@@ -40,6 +40,7 @@ class notifyNGOService {
         .where('role', isEqualTo: 'ngo')
         .get()
         .then((value) => value.docs.forEach((element) async {
+          print(element);
               print(currentlocation.latitude);
               print(currentlocation.longitude);
               print(element.data()['latitude']);
@@ -58,7 +59,7 @@ class notifyNGOService {
               if (distance <= 2000) {
                 print('if within distance');
                 NGO_User user = NGO_User(
-                    uid: element.data()['uid'],
+                    uid: element.reference.id ,
                     username: element.data()['username'],
                     latitude: element.data()['latitude'],
                     longitude: element.data()['longitude'],
@@ -66,10 +67,11 @@ class notifyNGOService {
                     email: element.data()['email'],
                     donationlistid: element.data()['donationlistid']);
                 nearby_ngo_list.add(user);
-                print(user);
+                print(user.uid);
                 CurrentDonationList(user, donationid);
               }
             }));
+  
     return (nearby_ngo_list);
   }
 }
