@@ -37,7 +37,15 @@ class MyApp extends StatelessWidget {
               final AuthService auth = AuthService();
               User user = userSnapshot.data;
               // auth.getUserData(user.uid).then(() {});
-
+              return FutureBuilder(
+                future: FirebaseFirestore.instance.collection('users').doc(user.uid).get(),
+                  builder: (ctx, futureSnapshot){
+                if(futureSnapshot.connectionState == ConnectionState.waiting) {
+                  return Center(child: CircularProgressIndicator());
+                }
+                print('Role:' + futureSnapshot.data.data()['role']);
+                return NGOHomeScreen();
+              });
               return NGOHomeScreen();
             }
 
