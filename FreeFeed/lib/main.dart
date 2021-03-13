@@ -20,6 +20,7 @@ void main() async {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    print("MAIN BUILD");
     return MaterialApp(
         title: 'Free Feed',
         theme: ThemeData(
@@ -29,11 +30,13 @@ class MyApp extends StatelessWidget {
           stream: FirebaseAuth.instance.authStateChanges(),
           builder: (ctx, userSnapshot)  {
             if (userSnapshot.connectionState == ConnectionState.waiting) {
+              print('COnnection STATE');
               return Center(
-                child: CircularProgressIndicator(),
+                child: Text('Waiting above'),
               );
             }
             if (userSnapshot.hasData) {
+              print("Inside stream builder has data");
               final AuthService auth = AuthService();
               User user = userSnapshot.data;
               // auth.getUserData(user.uid).then(() {});
@@ -41,15 +44,17 @@ class MyApp extends StatelessWidget {
                 future: FirebaseFirestore.instance.collection('users').doc(user.uid).get(),
                   builder: (ctx, futureSnapshot){
                 if(futureSnapshot.connectionState == ConnectionState.waiting) {
-                  return Center(child: CircularProgressIndicator());
+                  return Center(child: Text('Waiting here'));
                 }
                 print('Role:' + futureSnapshot.data.data()['role']);
-                return NGOHomeScreen();
+                if(futureSnapshot.data.data()['role'] == 'ngo'){
+                  return NGOHomeScreen();
+                }
+                return HomeScreen();
               });
-              return NGOHomeScreen();
             }
-
-            return AuthScreen();
+              print("ABOVE auth");
+              return AuthScreen();
           },
         ));
   }
