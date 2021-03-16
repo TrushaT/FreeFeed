@@ -1,7 +1,9 @@
 import 'package:FreeFeed/models/currentdonation.dart';
+import 'package:FreeFeed/screens/NGO/donationrequestlist.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import '../drawerscreen.dart';
 import 'current_donation.dart';
 import 'package:FreeFeed/widgets/loading.dart';
 import 'donation_tile.dart';
@@ -14,13 +16,22 @@ class NGOHomeScreen extends StatefulWidget {
 }
 
 class _NGOHomeScreenState extends State<NGOHomeScreen> {
-  List<Donations> currentdonation_list;
+  List<Donations> currentDonationList =  [
+     Donations(decription: 'Wedding at Borivali',food_quantity: '5 kgs'),
+     Donations(decription: 'Reception at Kandivali',food_quantity: '2 kgs'),
+     Donations(decription: 'Family function',food_quantity: '4 kgs') ,
+     Donations(decription: 'Family function',food_quantity: '4 kgs'),
+     Donations(decription: 'Family function',food_quantity: '4 kgs'),
+     Donations(decription: 'Family function',food_quantity: '4 kgs'),
+     Donations(decription: 'Family function',food_quantity: '4 kgs') 
+  ];
+
   CollectionReference service =
       FirebaseFirestore.instance.collection('Current');
   final FirebaseAuth auth = FirebaseAuth.instance;
   String userId;
   CurrentDonationService _currentDonationService = CurrentDonationService();
-
+  
   @override
   void initState() {
     final User user = auth.currentUser;
@@ -30,14 +41,84 @@ class _NGOHomeScreenState extends State<NGOHomeScreen> {
   }
 
   Future getCurrentDonations(uid) async {
-    currentdonation_list =
+    currentDonationList =
         await _currentDonationService.getcurrentdonations(uid);
     print('here');
-    print(currentdonation_list);
+    print(currentDonationList);
     setState(() {
-      currentdonation_list = currentdonation_list;
+      currentDonationList = currentDonationList;
     });
   }
+
+   // ignore: non_constant_identifier_names
+   Widget currentDonationsCard(Donations) {
+     return Padding(
+       padding: const EdgeInsets.all(8.0),
+      
+       child: Card(
+         color: Colors.blue.shade200,
+         child: Row(
+             children: <Widget>[
+               Column(
+                 crossAxisAlignment: CrossAxisAlignment.start,
+                 children: <Widget>[
+                   Text('food Donation request',
+                     style: TextStyle (
+                         color: Colors.black,
+                         fontSize: 18
+                     ),
+                   ),
+                   Text('2 kgs',
+                     style: TextStyle (
+                         color: Colors.black,
+                         fontSize: 12
+                     ),
+                   )
+                 ],
+                 
+               ),
+               Column(
+                 crossAxisAlignment: CrossAxisAlignment.end,
+                 children: [
+                   ButtonBar(
+                    alignment: MainAxisAlignment.end,
+                    children: [
+                      /* FlatButton(
+                        onPressed: () {
+                          // Perform some action
+                        },
+                        child: const Text('Details'),
+                         ),*/
+                      FlatButton(
+                        onPressed: () {
+                          // Perform some action
+                        },
+                        //child: const Text(''),
+                        child: Icon(
+                    Icons.check_circle,
+                    color: Colors.green[600],
+                  ),
+                      ),
+                      FlatButton(
+                        onPressed: () {
+                          // Perform some action
+                        },
+                        child: Icon(
+                    Icons.cancel_rounded,
+                    color: Colors.red[400],
+                  ),
+                      ),
+                    ],
+                  ),
+                 ],
+               )
+               
+             ],
+           ),
+         ),
+      // ),
+     );
+   }
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +142,7 @@ class _NGOHomeScreenState extends State<NGOHomeScreen> {
     //     }
       return Scaffold(
           appBar: AppBar(
-            title: Text('Welcome to FreeFeed !'),
+            title: Text('Donation Requests'),
              actions: [
                 FlatButton(
                   child: Text('Chat'),
@@ -78,17 +159,30 @@ class _NGOHomeScreenState extends State<NGOHomeScreen> {
                 ),
               ],
           ),
+          body: Padding(
+        padding: const EdgeInsets.fromLTRB(10, 50, 10, 10),
+        child: Column(
+          children: <Widget>[
+            Column(
+              children: currentDonationList.map((d) {
+                return currentDonationsCard(d);
+              }).toList()
+            )
+          ],
+        ),
+      ),
+      drawer: DrawerScreen(),
       
-        body: currentdonation_list == null
+        /* body: currentDonationList == null
             ? Container(child: Loading())
             : ListView.builder(
-                itemCount: currentdonation_list.length,
+                itemCount: currentDonationList.length,
                 itemBuilder: (context, index) {
-                  print(currentdonation_list[index].decription);
+                  print(currentDonationList[index].decription);
                   return Container(
-                    child: DonationTile(currentdonation_list[index]),
+                    child: DonationTile(currentDonationList[index]),
                   );
-                })
+                }) */
       );
     //   },
     // );
