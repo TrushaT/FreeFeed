@@ -9,8 +9,8 @@ import 'chat_screen.dart';
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        home: Scaffold(
+    print('Home screen user');
+    return Scaffold(
             appBar: AppBar(
               title: const Text('FreeFeed'),
               backgroundColor: Colors.cyan[300],
@@ -29,8 +29,6 @@ class HomeScreen extends StatelessWidget {
                   child: Text('Logout'),
                   onPressed: () {
                     FirebaseAuth.instance.signOut();
-                    Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (_) => AuthScreen()));
                   }
                 ),
               ],
@@ -74,8 +72,7 @@ class HomeScreen extends StatelessWidget {
       )
         ]
     )
-   )
-    );
+   );
 
   }
 }

@@ -122,6 +122,7 @@ class _NGOHomeScreenState extends State<NGOHomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    print("INside build NGO home screen");
     // Container(
     //   child: Center(
     //     child: Text('Donation Requests '),
@@ -153,8 +154,6 @@ class _NGOHomeScreenState extends State<NGOHomeScreen> {
                   child: Text('Logout'),
                   onPressed: () {
                     FirebaseAuth.instance.signOut();
-                    Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (_) => AuthScreen()));
                   }
                 ),
               ],
