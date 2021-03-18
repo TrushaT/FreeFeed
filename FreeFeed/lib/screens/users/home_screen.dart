@@ -1,4 +1,5 @@
 import 'package:FreeFeed/screens/authenticate/auth_screen.dart';
+import 'package:FreeFeed/screens/users/drawerscreen.dart';
 import 'map_ngo.dart';
 import 'package:flutter/material.dart';
 
@@ -15,16 +16,16 @@ class HomeScreen extends StatelessWidget {
               title: const Text('FreeFeed'),
               backgroundColor: Colors.cyan[300],
               actions: [
-                FlatButton(
+                /* FlatButton(
                   child: Text('Locate NGO'),
                   onPressed: () => Navigator.of(context)
                       .push(MaterialPageRoute(builder: (_) => NGOLocation())),
                 ),
-                FlatButton(
+                 FlatButton(
                   child: Text('Chat'),
                   onPressed: () => Navigator.of(context)
                       .push(MaterialPageRoute(builder: (_) => ChatScreen())),
-                ),
+                ),*/
                 FlatButton(
                   child: Text('Logout'),
                   onPressed: () {
@@ -71,7 +72,8 @@ class HomeScreen extends StatelessWidget {
       ),
       )
         ]
-    )
+    ),
+    drawer: UserDrawerScreen(),
    );
 
   }
