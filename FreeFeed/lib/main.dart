@@ -31,9 +31,7 @@ class MyApp extends StatelessWidget {
           builder: (ctx, userSnapshot)  {
             if (userSnapshot.connectionState == ConnectionState.waiting) {
               print('COnnection STATE');
-              return Center(
-                child: Text('Waiting above'),
-              );
+              return Center(child: CircularProgressIndicator(),);
             }
             if (userSnapshot.hasData) {
               print("Inside stream builder has data");
@@ -44,7 +42,7 @@ class MyApp extends StatelessWidget {
                 future: FirebaseFirestore.instance.collection('users').doc(user.uid).get(),
                   builder: (ctx, futureSnapshot){
                 if(futureSnapshot.connectionState == ConnectionState.waiting) {
-                  return Center(child: Text('Waiting here'));
+                  return Center(child: CircularProgressIndicator(),);
                 }
                 print('Role:' + futureSnapshot.data.data()['role']);
                 if(futureSnapshot.data.data()['role'] == 'ngo'){
