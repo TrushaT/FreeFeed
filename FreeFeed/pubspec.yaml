@@ -35,7 +35,8 @@ dependencies:
   json_serializable: ^3.3.0
   firebase_messaging: ^6.0.9
   fluttertoast: ^3.1.0
-  splashscreen:
+  awesome_dialog: ^1.3.2
+ 
 
 
 
