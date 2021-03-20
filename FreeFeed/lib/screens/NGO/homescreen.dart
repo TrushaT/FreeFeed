@@ -145,23 +145,27 @@ class _NGOHomeScreenState extends State<NGOHomeScreen> {
                     final List donations = dSnapshot.data.docs;
                     //print(donations[0].id);
                     //return FlutterLogo();
-                    print(doc);
-                    print(donations);
+
                     final finalDonations = donations
                         .where((donation) => doc.contains(donation.id))
                         .toList();
 
                     print('no of donations');
                     print(finalDonations.length);
+                    print(doc);
+                    print(finalDonations);
+
                     return finalDonations == null
                         ? Container(
                             child: Text('No Donation Requests'),
                           )
                         : ListView.builder(
-                            itemBuilder: (ctx, i) => DonationTile(Donations(
-                                decription: finalDonations[i]['decription'],
-                                food_quantity: finalDonations[i]
-                                    ['food_quantity'])),
+                            itemBuilder: (ctx, i) => DonationTile(
+                                Donations(
+                                    decription: finalDonations[i]['decription'],
+                                    food_quantity: finalDonations[i]
+                                        ['food_quantity']),
+                                finalDonations[i].reference.id),
                             itemCount: finalDonations.length,
                           );
                   });

@@ -12,7 +12,8 @@ class Constants {
 
 class DonationTile extends StatelessWidget {
   final Donations donation;
-  DonationTile(this.donation);
+  final id;
+  DonationTile(this.donation, this.id);
 
   @override
   Widget build(BuildContext context) {
@@ -49,15 +50,18 @@ class DonationTile extends StatelessWidget {
                 trailing: Icon(Icons.keyboard_arrow_down,
                     color: Colors.black, size: 30.0),
                 onTap: () {
-                 showDialog(context: context,
-                  builder: (BuildContext context){
-                  return CustomDialogBox(
-                    // title: "Custom Dialog Demo",
-                    // descriptions: "Hii all this is a custom dialog in flutter and  you will be use in your flutter applications",
-                    // text: "Yes",
-                  );
-                  }
-                );
+                  print("dialog clicked");
+                  print(id);
+                  showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return CustomDialogBox(
+                          id: id,
+                          //title: "Custom Dialog Demo",
+                          // descriptions: "Hii all this is a custom dialog in flutter and  you will be use in your flutter applications",
+                          // text: "Yes",
+                        );
+                      });
                 })));
   }
 }
