@@ -133,9 +133,9 @@ class _NGOHomeScreenState extends State<NGOHomeScreen> {
               //print(docs.runtimeType);
               //var donations = getDonations(docs);
 
-              return FutureBuilder(
-                  future:
-                      FirebaseFirestore.instance.collection('donations').get(),
+              return StreamBuilder(
+                  stream:
+                      FirebaseFirestore.instance.collection('donations').snapshots(),
                   builder: (ctx, dSnapshot) {
                     if (dSnapshot.connectionState == ConnectionState.waiting) {
                       return Center(
@@ -147,11 +147,13 @@ class _NGOHomeScreenState extends State<NGOHomeScreen> {
                     //return FlutterLogo();
 
                     final finalDonations = donations
-                        .where((donation) => doc.contains(donation.id))
+                        .where((donation) =>
+                            doc.contains(donation.id) && donation['status'] == 'requested')
                         .toList();
 
                     print('no of donations');
                     print(finalDonations.length);
+                    print(donations[6].id);
                     print(doc);
                     print(finalDonations);
 
@@ -165,7 +167,9 @@ class _NGOHomeScreenState extends State<NGOHomeScreen> {
                                     decription: finalDonations[i]['decription'],
                                     food_quantity: finalDonations[i]
                                         ['food_quantity']),
-                              finalDonations[i].reference.id,finalDonations[i]['date_of_donation'],finalDonations[i]['userid']),
+                                finalDonations[i].reference.id,
+                                finalDonations[i]['date_of_donation'],
+                                finalDonations[i]['userid']),
                             itemCount: finalDonations.length,
                           );
                   });
