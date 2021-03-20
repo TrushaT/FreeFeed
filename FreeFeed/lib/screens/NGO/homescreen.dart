@@ -165,7 +165,7 @@ class _NGOHomeScreenState extends State<NGOHomeScreen> {
                                     decription: finalDonations[i]['decription'],
                                     food_quantity: finalDonations[i]
                                         ['food_quantity']),
-                                finalDonations[i].reference.id),
+                              finalDonations[i].reference.id,finalDonations[i]['date_of_donation'],finalDonations[i]['userid']),
                             itemCount: finalDonations.length,
                           );
                   });

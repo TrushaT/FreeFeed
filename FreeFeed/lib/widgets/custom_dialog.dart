@@ -7,9 +7,11 @@ import 'donation_toast.dart';
 
 class CustomDialogBox extends StatefulWidget {
   final id;
-  // // final Image img;
+  final date;
+  final username;
 
-  const CustomDialogBox({Key key, this.id}) : super(key: key);
+  const CustomDialogBox({Key key, this.id, this.date, this.username})
+      : super(key: key);
 
   @override
   _CustomDialogBoxState createState() => _CustomDialogBoxState();
@@ -18,6 +20,7 @@ class CustomDialogBox extends StatefulWidget {
 class _CustomDialogBoxState extends State<CustomDialogBox> {
   final FirebaseAuth auth = FirebaseAuth.instance;
   CustomToast toast = CustomToast();
+  String username;
 
   getcurrentngoid() {
     final User user = auth.currentUser;
@@ -59,14 +62,14 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               Text(
-                'Date: 12/03/2021',
+                'Date : ${widget.date.toDate().toString().split(" ")[0]}\nTime : ${widget.date.toDate().toString().split(" ")[1].substring(0, 5)}',
                 style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
               ),
               SizedBox(
                 height: 15,
               ),
               Text(
-                'Username: testuser1',
+                ' Username: ${widget.username}',
                 style: TextStyle(fontSize: 14),
                 textAlign: TextAlign.center,
               ),
@@ -91,8 +94,8 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                               'ngoid': getcurrentngoid(),
                             });
                             toast.showToast('Donation request accepted',
-                                  Colors.green, Colors.white);
-                            // Navigator.of(context).pop();
+                                Colors.green, Colors.white);
+                            Navigator.of(context).pop();
                           },
                           child: Text('Accept'),
                         ),

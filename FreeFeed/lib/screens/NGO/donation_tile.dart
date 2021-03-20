@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'donation.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:FreeFeed/widgets/custom_dialog.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Constants {
   Constants._();
@@ -10,10 +11,40 @@ class Constants {
   static const double avatarRadius = 45;
 }
 
-class DonationTile extends StatelessWidget {
+class DonationTile extends StatefulWidget {
   final Donations donation;
   final id;
-  DonationTile(this.donation, this.id);
+  final date;
+  final userid;
+  
+  DonationTile(this.donation, this.id, this.date, this.userid);
+  @override
+  _DonationTileState createState() => _DonationTileState();
+}
+
+
+
+class _DonationTileState extends State<DonationTile> {
+  
+String username;
+
+ getusername(userid) async {
+    DocumentSnapshot ref =
+        await FirebaseFirestore.instance.collection('users').doc(userid).get();
+    print(ref.data()['username']);
+    return ref.data()['username'];
+  }
+
+  
+  @override
+  void initState() {
+    super.initState();
+    getusername(widget.userid).then((result) {
+      setState(() {
+        username = result;
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +65,7 @@ class DonationTile extends StatelessWidget {
                 ),
                 title: Text(
                   // "Introduction to Driving",
-                  "${donation.decription}",
+                  "${widget.donation.decription}",
                   style: TextStyle(
                       color: Colors.black, fontWeight: FontWeight.bold),
                 ),
@@ -43,7 +74,7 @@ class DonationTile extends StatelessWidget {
                 subtitle: Row(
                   children: <Widget>[
                     Icon(Icons.room_service_outlined),
-                    Text(" ${donation.food_quantity} ",
+                    Text(" ${widget.donation.food_quantity} ",
                         style: TextStyle(color: Colors.black))
                   ],
                 ),
@@ -51,12 +82,16 @@ class DonationTile extends StatelessWidget {
                     color: Colors.black, size: 30.0),
                 onTap: () {
                   print("dialog clicked");
-                  print(id);
+                  print(widget.id);
+                  print(widget.date);
+                  print(widget.userid);
                   showDialog(
                       context: context,
                       builder: (BuildContext context) {
                         return CustomDialogBox(
-                          id: id,
+                          id: widget.id,
+                          date: widget.date,
+                          username: username,
                           //title: "Custom Dialog Demo",
                           // descriptions: "Hii all this is a custom dialog in flutter and  you will be use in your flutter applications",
                           // text: "Yes",
