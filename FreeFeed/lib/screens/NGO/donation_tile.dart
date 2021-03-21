@@ -1,7 +1,6 @@
 import 'package:FreeFeed/screens/NGO/notification.dart';
 import 'package:flutter/material.dart';
 import 'donation.dart';
-import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:FreeFeed/widgets/custom_dialog.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 

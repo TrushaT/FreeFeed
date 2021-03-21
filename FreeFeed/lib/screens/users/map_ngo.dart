@@ -111,26 +111,26 @@ class _NGOLocationState extends State<NGOLocation> {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
-            appBar: AppBar(
-              title: const Text('Locate NGO'),
-              backgroundColor: Colors.cyan[300],
-              actions: [
-                FlatButton(
-                  child: Text('Chat'),
-                  onPressed: () => Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (_) => ChatScreen())),
-                ),
-                FlatButton(
-                  child: Text('Home'),
-                  onPressed: () => Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (_) => HomeScreen())),
-                ),
-                FlatButton(
-                  child: Text('Logout'),
-                  onPressed: () => FirebaseAuth.instance.signOut(),
-                ),
-              ],
-            ),
+            // appBar: AppBar(
+            //   title: const Text('Locate NGO'),
+            //   backgroundColor: Colors.cyan[300],
+            //   actions: [
+            //     FlatButton(
+            //       child: Text('Chat'),
+            //       onPressed: () => Navigator.of(context)
+            //           .push(MaterialPageRoute(builder: (_) => ChatScreen())),
+            //     ),
+            //     FlatButton(
+            //       child: Text('Home'),
+            //       onPressed: () => Navigator.of(context)
+            //           .push(MaterialPageRoute(builder: (_) => HomeScreen())),
+            //     ),
+            //     FlatButton(
+            //       child: Text('Logout'),
+            //       onPressed: () => FirebaseAuth.instance.signOut(),
+            //     ),
+            //   ],
+            // ),
             body: GoogleMap(
               initialCameraPosition: CameraPosition(
                 target: LatLng(20.5937, 78.9629),

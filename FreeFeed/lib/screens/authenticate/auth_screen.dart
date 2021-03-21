@@ -5,6 +5,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/services.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:FreeFeed/widgets/auth_form.dart';
+import 'background.dart';
 
 class AuthScreen extends StatefulWidget {
   @override
@@ -62,8 +63,17 @@ class _AuthScreenState extends State<AuthScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).primaryColor,
-      body: AuthForm(_submitAuthForm, _isLoading),
-    );
+      // resizeToAvoidBottomInset: true,
+      resizeToAvoidBottomPadding: false,
+      // backgroundColor: Theme.of(context).primaryColor,
+      backgroundColor: Colors.white,
+      body:
+      Stack(
+          children: <Widget>[
+             Background(),
+             AuthForm(_submitAuthForm, _isLoading),
+             ],
+        ));
+    
   }
 }

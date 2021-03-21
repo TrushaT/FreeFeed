@@ -157,7 +157,7 @@ class _NGOHomeScreenState extends State<NGOHomeScreen> {
                     print(doc);
                     print(finalDonations);
 
-                    return finalDonations == null
+                    return finalDonations.length == 0
                         ? Container(
                             child: Text('No Donation Requests'),
                           )

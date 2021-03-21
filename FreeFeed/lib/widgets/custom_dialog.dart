@@ -28,6 +28,15 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
     return ngoid;
   }
 
+  getngo() async {
+    DocumentSnapshot ref = await FirebaseFirestore.instance
+        .collection('donations')
+        .doc(widget.id)
+        .get();
+    print(ref.data()['ngoid']);
+    return ref.data()['ngoid'];
+  }
+
   @override
   Widget build(BuildContext context) {
     return Dialog(
@@ -41,6 +50,7 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
   }
 
   contentBox(context) {
+    String ngo;
     return Stack(
       children: <Widget>[
         Container(
@@ -85,7 +95,7 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                           padding: const EdgeInsets.all(8.0),
                           textColor: Colors.white,
                           color: Colors.green,
-                          onPressed: () {
+                          onPressed: () async {
                             FirebaseFirestore.instance
                                 .collection('donations')
                                 .doc(widget.id)
@@ -93,8 +103,15 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                               'status': "accepted",
                               'ngoid': getcurrentngoid(),
                             });
-                            toast.showToast('Donation request accepted',
-                                Colors.green, Colors.white);
+                            ngo = await getngo();
+                            if (ngo == getcurrentngoid()) {
+                              toast.showToast('Donation request accepted',
+                                  Colors.blue, Colors.white);
+                            }
+                            else{
+                               toast.showToast('Sorry ! Request accepted by another Ngo',
+                                  Colors.red, Colors.white);
+                            }
                             Navigator.of(context).pop();
                           },
                           child: Text('Accept'),
@@ -103,7 +120,7 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                           padding: const EdgeInsets.all(8.0),
                           textColor: Colors.white,
                           color: Colors.red,
-                          onPressed: () async {
+                          onPressed: () {
                             Navigator.of(context).pop();
                           },
                           child: Text('Cancel'),
