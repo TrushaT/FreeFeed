@@ -1,4 +1,6 @@
 import 'dart:collection';
+import 'package:FreeFeed/screens/users/drawerscreen.dart';
+
 import 'home_screen.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
@@ -8,7 +10,7 @@ import 'package:FreeFeed/maps/locations.dart' as locations;
 import 'package:location/location.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import './chat_screen.dart';
+//import './chat_screen.dart';
 import 'donateform.dart';
 
 class NGOLocation extends StatefulWidget {
@@ -115,11 +117,11 @@ class _NGOLocationState extends State<NGOLocation> {
               title: const Text('Locate NGO'),
               backgroundColor: Colors.cyan[300],
               actions: [
-                FlatButton(
+                /*FlatButton(
                   child: Text('Chat'),
                   onPressed: () => Navigator.of(context)
                       .push(MaterialPageRoute(builder: (_) => ChatScreen())),
-                ),
+                ),*/
                 FlatButton(
                   child: Text('Home'),
                   onPressed: () => Navigator.of(context)
@@ -146,7 +148,8 @@ class _NGOLocationState extends State<NGOLocation> {
                 onPressed: () => Navigator.of(context).push(
                     MaterialPageRoute(builder: (_) => DonationForm())),
                     
-        )
+        ),
+        drawer: UserDrawerScreen(),
         ));
 
   }

@@ -1,3 +1,4 @@
+import 'package:FreeFeed/screens/users/drawerscreen.dart';
 import 'package:flutter/material.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
@@ -11,6 +12,7 @@ class DonationHistory extends StatefulWidget {
 class _DonationHistoryState extends State<DonationHistory> {
   var _isLoading = true;
   List donationList = [];
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void initState() {
@@ -34,12 +36,35 @@ class _DonationHistoryState extends State<DonationHistory> {
     print(donationList);
     return Scaffold(
         appBar: AppBar(
-          title: Text('Donation History'),
+              title: const Text('Donation History'),
+              backgroundColor: Colors.cyan[300],
+              actions: [
+                FlatButton(
+                  child: Text('Logout'),
+                  onPressed: () {
+                    FirebaseAuth.instance.signOut();
+                  }
+                ),
+              ],
+            ),
+             body: Center(
+          child: Scrollbar(
+            isAlwaysShown: true,
+            controller: _scrollController,
+            child: ListView.builder(
+                controller: _scrollController,
+                itemCount: 20,
+                itemBuilder: (context, index) {
+                  return Card(
+                      child: ListTile(
+                    title: Text("Donation 1"),
+                  ));
+                }),
+          ),
         ),
-        body: _isLoading ? Center(
-          child: CircularProgressIndicator(),
-        )
-            : ListView.builder(itemBuilder: (ctx, i) => Text(donationList[i]),
-          itemCount: donationList.length,));
+       
+        drawer: UserDrawerScreen(), 
+        );
+        
   }
 }

@@ -1,3 +1,5 @@
+import 'package:FreeFeed/screens/users/chatswithngo.dart';
+import 'package:FreeFeed/screens/users/donation_history.dart';
 import 'package:flutter/material.dart';
 
 class UserDrawerScreen extends StatelessWidget {
@@ -16,12 +18,7 @@ class UserDrawerScreen extends StatelessWidget {
             ),
             ListTile(
               title: Text('Chats with NGO'),
-              onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
-                Navigator.pop(context);
-              },
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => ChatwithNgo())),
             ),
             ListTile(
               title: Text('Donation Requests'),
@@ -34,12 +31,7 @@ class UserDrawerScreen extends StatelessWidget {
             ),
             ListTile(
               title: Text('Donation History'),
-              onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
-                Navigator.pop(context);
-              },
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => DonationHistory())),
             ),
           ],
         ),

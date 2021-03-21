@@ -53,42 +53,29 @@ class _NGOHomeScreenState extends State<NGOHomeScreen> {
    // ignore: non_constant_identifier_names
    Widget currentDonationsCard(Donations) {
      return Padding(
-       padding: const EdgeInsets.all(8.0),
+       padding: const EdgeInsets.all(20.0),
       
        child: Card(
+          shape: RoundedRectangleBorder(  
+            borderRadius: BorderRadius.circular(15.0),),  
          color: Colors.blue.shade200,
+         elevation: 10,
          child: Row(
              children: <Widget>[
                Column(
                  crossAxisAlignment: CrossAxisAlignment.start,
                  children: <Widget>[
                    Text('food Donation request',
-                     style: TextStyle (
-                         color: Colors.black,
-                         fontSize: 18
-                     ),
-                   ),
+                     style: TextStyle (color: Colors.black,fontSize: 18),),
                    Text('2 kgs',
-                     style: TextStyle (
-                         color: Colors.black,
-                         fontSize: 12
-                     ),
-                   )
-                 ],
-                 
-               ),
+                     style: TextStyle (color: Colors.black,fontSize: 12),)
+                     ], ),
                Column(
                  crossAxisAlignment: CrossAxisAlignment.end,
                  children: [
                    ButtonBar(
                     alignment: MainAxisAlignment.end,
                     children: [
-                      /* FlatButton(
-                        onPressed: () {
-                          // Perform some action
-                        },
-                        child: const Text('Details'),
-                         ),*/
                       FlatButton(
                         onPressed: () {
                           // Perform some action
