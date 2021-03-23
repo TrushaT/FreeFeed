@@ -31,70 +31,7 @@ class _NGOHomeScreenState extends State<NGOHomeScreen> {
     super.initState();
   }
 
-  // Widget currentDonationsCard(Donations) {
-  //   return Padding(
-  //     padding: const EdgeInsets.all(8.0),
-
-  //     child: Card(
-  //       color: Colors.white,
-  //       child: Row(
-  //         children: <Widget>[
-  //           Column(
-  //             crossAxisAlignment: CrossAxisAlignment.start,
-  //             children: <Widget>[
-  //               Text(
-  //                 'food Donation request',
-  //                 style: TextStyle(color: Colors.black, fontSize: 18),
-  //               ),
-  //               Text(
-  //                 '2 kgs',
-  //                 style: TextStyle(color: Colors.black, fontSize: 12),
-  //               )
-  //             ],
-  //           ),
-  //           Column(
-  //             crossAxisAlignment: CrossAxisAlignment.end,
-  //             children: [
-  //               ButtonBar(
-  //                 alignment: MainAxisAlignment.end,
-  //                 children: [
-  //                   /* FlatButton(
-  //                       onPressed: () {
-  //                         // Perform some action
-  //                       },
-  //                       child: const Text('Details'),
-  //                        ),*/
-  //                   FlatButton(
-  //                     onPressed: () {
-  //                       // Perform some action
-  //                     },
-  //                     //child: const Text(''),
-  //                     child: Icon(
-  //                       Icons.check_circle,
-  //                       color: Colors.green[600],
-  //                     ),
-  //                   ),
-  //                   FlatButton(
-  //                     onPressed: () {
-  //                       // Perform some action
-  //                     },
-  //                     child: Icon(
-  //                       Icons.cancel_rounded,
-  //                       color: Colors.red[400],
-  //                     ),
-  //                   ),
-  //                 ],
-  //               ),
-  //             ],
-  //           )
-  //         ],
-  //       ),
-  //     ),
-  //     // ),
-  //   );
-  // }
-
-  @override
+    @override
   Widget build(BuildContext context) {
     print("INside build NGO home screen");
 

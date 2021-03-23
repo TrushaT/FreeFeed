@@ -96,7 +96,7 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                           textColor: Colors.white,
                           color: Colors.green,
                           onPressed: () async {
-                            FirebaseFirestore.instance
+                            await FirebaseFirestore.instance
                                 .collection('donations')
                                 .doc(widget.id)
                                 .update({
