@@ -16,10 +16,10 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Chat'),
-        backgroundColor: Colors.cyan[300],
-      ),
+      // appBar: AppBar(
+      //   title: Text('Chat'),
+      //   backgroundColor: Colors.cyan[300],
+      // ),
       body: Container(
         child: Column(
           children: <Widget>[
