@@ -31,12 +31,7 @@ class _NGOHomeScreenState extends State<NGOHomeScreen> {
     super.initState();
   }
 
-  // Widget currentDonationsCard(Donations) {
-  //   return Padding(
-  //     padding: const EdgeInsets.all(8.0),
-
-
-  @override
+    @override
   Widget build(BuildContext context) {
     print("INside build NGO home screen");
 

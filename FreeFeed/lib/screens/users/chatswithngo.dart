@@ -13,10 +13,12 @@ class ChatwithNgo extends StatefulWidget {
 class _ChatwithNgo extends State<ChatwithNgo> {
 
   List<NGO_User> ngoUsers = [
-    NGO_User(username: "NGO1"),
-    NGO_User(username: "NGO1"),
-    NGO_User(username: "NGO1"),
-    NGO_User(username: "NGO1"),
+    NGO_User(username: "NGO1", messageText: "Thank you for the donation", imageURL:"assets/ngo1.jpg",time:"23 March" ),
+    NGO_User(username: "NGO2", messageText: "Thank you for the donation", imageURL:"assets/ngo1.jpg",time:"18 March" ),
+    NGO_User(username: "NGO3", messageText: "Thank you for the donation", imageURL:"assets/ngo1.jpg",time:"22 March" ),
+    NGO_User(username: "NGO4", messageText: "Thank you for the donation", imageURL:"assets/ngo1.jpg",time:"23 March" ),
+    
+    
     /* NGO_User(text: "Debra Hawkins", secondaryText: "Thankyou, It's awesome", image: "images/userImage5.jpeg", time: "23 Mar"),
     NGO_User(text: "Jacob Pena", secondaryText: "will update you in evening", image: "images/userImage6.jpeg", time: "17 Mar"),
     NGO_User(text: "Andrey Jones", secondaryText: "Can you please share the file?", image: "images/userImage7.jpeg", time: "24 Feb"),
@@ -26,7 +28,7 @@ class _ChatwithNgo extends State<ChatwithNgo> {
 @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      /* appBar: AppBar(
               title: const Text('Chats with NGO'),
               backgroundColor: Colors.cyan[300],
               actions: [
@@ -37,7 +39,7 @@ class _ChatwithNgo extends State<ChatwithNgo> {
                   }
                 ),
               ],
-            ),
+            ), */
       body: SingleChildScrollView(
         physics: BouncingScrollPhysics(),
         child: Column(
@@ -45,7 +47,7 @@ class _ChatwithNgo extends State<ChatwithNgo> {
           children: <Widget>[
 
 
-            Padding(
+            /*Padding(
   padding: EdgeInsets.only(top: 16,left: 16,right: 16),
   child: TextField(
     decoration: InputDecoration(
@@ -63,7 +65,7 @@ class _ChatwithNgo extends State<ChatwithNgo> {
       ),
     ),
   ),
-),
+),*/
             ListView.builder(
   itemCount: ngoUsers.length,
   shrinkWrap: true,
@@ -72,18 +74,20 @@ class _ChatwithNgo extends State<ChatwithNgo> {
   itemBuilder: (context, index){
     return ConversationList(
       name: ngoUsers[index].username,
-      //messageText: ngoUsers[index].messageText,
-      //imageUrl: ngoUsers[index].imageURL,
-      //time: ngoUsers[index].time,
+      messageText: ngoUsers[index].messageText,
+      imageUrl: ngoUsers[index].imageURL,
+      time: ngoUsers[index].time,
       //isMessageRead: (index == 0 || index == 3)?true:false,
     );
-  },
-),
-          ],
-        ),
-      ),
-    );
-
     
-  }
+  },
+  
+),
+Divider(),
+
+],
+),
+),
+);
+ }
 }

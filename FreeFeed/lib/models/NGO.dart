@@ -8,6 +8,9 @@ class NGO_User {
   final String role;
   final String email;
   final String donationlistid;
+  final String messageText;
+  final String imageURL;
+  final String time;
   NGO_User(
       {this.uid,
       this.username,
@@ -15,5 +18,8 @@ class NGO_User {
       this.longitude,
       this.role,
       this.email,
-      this.donationlistid});
+      this.donationlistid,
+      this.messageText,
+      this.imageURL,
+      this.time});
 }
