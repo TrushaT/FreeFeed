@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:FreeFeed/screens/users/chatswithngo.dart';
 
 class DrawerScreen extends StatelessWidget {
+  final String role;
+  DrawerScreen(this.role);
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -16,12 +19,8 @@ class DrawerScreen extends StatelessWidget {
             ),
             ListTile(
               title: Text('Chats with Donors'),
-              onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
-                Navigator.pop(context);
-              },
+                onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => ChatwithNgo(role)))
+              ,
             ),
             ListTile(
               title: Text('Pending Donation Requests'),

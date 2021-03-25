@@ -15,6 +15,10 @@ import 'package:location/location.dart';
 import 'donation_history.dart';
 
 class HomeScreen extends StatefulWidget {
+  final String role;
+
+  HomeScreen(this.role);
+
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
@@ -84,7 +88,7 @@ class _HomeScreenState extends State<HomeScreen> {
             HomePage(),
             NGOLocation(),
             DonationHistory(),
-            ChatwithNgo(),
+            ChatwithNgo(widget.role),
           ],
         ),
       ),

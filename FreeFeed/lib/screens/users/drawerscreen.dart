@@ -3,6 +3,7 @@ import 'package:FreeFeed/screens/users/donation_history.dart';
 import 'package:flutter/material.dart';
 
 class UserDrawerScreen extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -16,10 +17,10 @@ class UserDrawerScreen extends StatelessWidget {
                 color: Colors.cyan[300],
               ),
             ),
-            ListTile(
-              title: Text('Chats with NGO'),
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => ChatwithNgo())),
-            ),
+//            ListTile(
+//              title: Text('Chats with NGO'),
+//              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => ChatwithNgo())),
+//            ),
             ListTile(
               title: Text('Donation Requests'),
               onTap: () {

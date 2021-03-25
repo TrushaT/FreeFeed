@@ -49,11 +49,12 @@ class MyApp extends StatelessWidget {
                         ConnectionState.waiting) {
                       return Loading();
                     }
-                    print('Role:' + futureSnapshot.data.data()['role']);
-                    if (futureSnapshot.data.data()['role'] == 'ngo') {
-                      return NGOHomeScreen();
+                    var role = futureSnapshot.data.data()['role'];
+                    print('Role:' + role);
+                    if (role == 'ngo') {
+                      return NGOHomeScreen(role);
                     }
-                    return HomeScreen();
+                    return HomeScreen(role);
                   });
             }
             print("ABOVE auth");

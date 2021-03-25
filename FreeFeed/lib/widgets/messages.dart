@@ -6,12 +6,17 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import './message_bubble.dart';
 
 class Messages extends StatelessWidget {
+  final String userId;
+  final String ngoId;
+
+  Messages(this.userId, this.ngoId);
+
   @override
   Widget build(BuildContext context) {
         final user = FirebaseAuth.instance.currentUser;
         return StreamBuilder(
             stream: FirebaseFirestore.instance
-                .collection('chat')
+                .collection('$ngoId-$userId')
                 .orderBy('createdAt', descending: true)
                 .snapshots(),
             builder: (ctx, chatSnapshot) {

@@ -12,6 +12,10 @@ import '../users/chat_screen.dart';
 import '../authenticate/auth_screen.dart';
 
 class NGOHomeScreen extends StatefulWidget {
+  final String role;
+
+  NGOHomeScreen(this.role);
+
   @override
   _NGOHomeScreenState createState() => _NGOHomeScreenState();
 }
@@ -39,11 +43,11 @@ class _NGOHomeScreenState extends State<NGOHomeScreen> {
       appBar: AppBar(
         title: Text('Donation Requests'),
         actions: [
-          FlatButton(
-            child: Text('Chat'),
-            onPressed: () => Navigator.of(context)
-                .push(MaterialPageRoute(builder: (_) => ChatScreen())),
-          ),
+//          FlatButton(
+//            child: Text('Chat'),
+//            onPressed: () => Navigator.of(context)
+//                .push(MaterialPageRoute(builder: (_) => ChatScreen())),
+//          ),
           FlatButton(
               child: Text('Logout'),
               onPressed: () {
@@ -111,7 +115,7 @@ class _NGOHomeScreenState extends State<NGOHomeScreen> {
                   });
             }),
       ),
-      drawer: DrawerScreen(),
+      drawer: DrawerScreen(widget.role),
     );
   }
 }

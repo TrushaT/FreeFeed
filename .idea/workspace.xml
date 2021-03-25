@@ -3,7 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="784e3443-70f1-4c66-a339-6fa73a129d70" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FreeFeed/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/FreeFeed/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FreeFeed/lib/screens/NGO/drawerscreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/FreeFeed/lib/screens/NGO/drawerscreen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FreeFeed/lib/screens/NGO/homescreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/FreeFeed/lib/screens/NGO/homescreen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FreeFeed/lib/screens/authenticate/auth_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/FreeFeed/lib/screens/authenticate/auth_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FreeFeed/lib/screens/users/chat_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/FreeFeed/lib/screens/users/chat_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FreeFeed/lib/screens/users/chatswithngo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/FreeFeed/lib/screens/users/chatswithngo.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FreeFeed/lib/screens/users/drawerscreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/FreeFeed/lib/screens/users/drawerscreen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FreeFeed/lib/screens/users/home_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/FreeFeed/lib/screens/users/home_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FreeFeed/lib/widgets/conversationList.dart" beforeDir="false" afterPath="$PROJECT_DIR$/FreeFeed/lib/widgets/conversationList.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FreeFeed/lib/widgets/messages.dart" beforeDir="false" afterPath="$PROJECT_DIR$/FreeFeed/lib/widgets/messages.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FreeFeed/lib/widgets/new_message.dart" beforeDir="false" afterPath="$PROJECT_DIR$/FreeFeed/lib/widgets/new_message.dart" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,27 +29,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FreeFeed/lib/screens/authenticate/auth_screen.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="53" column="6" selection-start-line="53" selection-start-column="6" selection-end-line="53" selection-end-column="6" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FreeFeed/lib/screens/NGO/accept_request.dart">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/FreeFeed/lib/screens/NGO/homescreen.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="173" column="25" lean-forward="true" selection-start-line="173" selection-start-column="25" selection-end-line="173" selection-end-column="25" />
+            <state relative-caret-position="306">
+              <caret line="117" column="22" selection-start-line="117" selection-start-column="22" selection-end-line="117" selection-end-column="22" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
               </folding>
@@ -47,19 +41,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FreeFeed/lib/screens/NGO/donationrequestlist.dart">
+        <entry file="file://$PROJECT_DIR$/FreeFeed/lib/screens/NGO/drawerscreen.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FreeFeed/lib/widgets/messages.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="22" column="51" selection-start-line="22" selection-start-column="51" selection-end-line="22" selection-end-column="51" />
+            <state relative-caret-position="-68">
+              <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -68,19 +53,43 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FreeFeed/lib/screens/NGO/current_donation.dart">
+        <entry file="file://$PROJECT_DIR$/FreeFeed/lib/screens/users/chatswithngo.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+            <state relative-caret-position="-1588">
+              <caret line="111" selection-start-line="111" selection-end-line="111" />
+              <folding>
+                <element signature="e#0#42#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FreeFeed/lib/screens/authenticate/background.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FreeFeed/lib/widgets/messages.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="19" column="55" lean-forward="true" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="55" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/FreeFeed/lib/screens/users/home_screen.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="31" column="52" selection-start-line="31" selection-start-column="52" selection-end-line="31" selection-end-column="52" />
+            <state relative-caret-position="1649">
+              <caret line="97" column="28" lean-forward="true" selection-start-line="97" selection-start-column="28" selection-end-line="97" selection-end-column="28" />
               <folding>
                 <element signature="e#0#64#0" expanded="true" />
               </folding>
@@ -89,10 +98,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FreeFeed/lib/screens/users/chat_screen.dart">
+        <entry file="file://$PROJECT_DIR$/FreeFeed/lib/screens/authenticate/auth_screen.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
+            <state relative-caret-position="109">
+              <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -101,10 +110,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FreeFeed/lib/widgets/message_bubble.dart">
+        <entry file="file://$PROJECT_DIR$/FreeFeed/lib/widgets/conversationList.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1003">
-              <caret line="61" column="10" selection-start-line="61" selection-start-column="10" selection-end-line="61" selection-end-column="10" />
+            <state relative-caret-position="289">
+              <caret line="54" column="87" selection-start-line="54" selection-start-column="87" selection-end-line="54" selection-end-column="87" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -113,13 +122,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FreeFeed/lib/widgets/auth_form.dart">
+        <entry file="file://$PROJECT_DIR$/FreeFeed/lib/screens/users/homepage.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1632">
-              <caret line="98" column="22" selection-start-line="98" selection-start-column="22" selection-end-line="98" selection-end-column="22" />
-              <folding>
-                <element signature="e#0#17#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="153">
+              <caret line="29" column="33" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FreeFeed/lib/screens/users/get_nearbyngo.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-731">
+              <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -148,6 +163,10 @@
       <find>_isLOadin</find>
       <find>currentDonations</find>
       <find>_isL</find>
+      <find>init</find>
+      <find>In user</find>
+      <find>hereee</find>
+      <find>firebaseA</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -164,16 +183,24 @@
         <option value="$PROJECT_DIR$/FreeFeed/lib/screens/auth_screen.dart" />
         <option value="$PROJECT_DIR$/FreeFeed/lib/screens/chat_screen.dart" />
         <option value="$PROJECT_DIR$/FreeFeed/lib/widgets/message_bubble.dart" />
-        <option value="$PROJECT_DIR$/FreeFeed/lib/widgets/new_message.dart" />
         <option value="$PROJECT_DIR$/FreeFeed/lib/screens/ngo.dart" />
-        <option value="$PROJECT_DIR$/FreeFeed/lib/widgets/messages.dart" />
         <option value="$PROJECT_DIR$/FreeFeed/lib/screens/donation_history.dart" />
         <option value="$PROJECT_DIR$/FreeFeed/lib/widgets/loading.dart" />
-        <option value="$PROJECT_DIR$/FreeFeed/lib/screens/authenticate/auth_screen.dart" />
-        <option value="$PROJECT_DIR$/FreeFeed/lib/screens/users/home_screen.dart" />
         <option value="$PROJECT_DIR$/FreeFeed/lib/screens/NGO/current_donation.dart" />
-        <option value="$PROJECT_DIR$/FreeFeed/lib/main.dart" />
+        <option value="$PROJECT_DIR$/FreeFeed/lib/widgets/custom_dialog.dart" />
+        <option value="$PROJECT_DIR$/FreeFeed/lib/screens/users/chat_screen.dart" />
+        <option value="$PROJECT_DIR$/FreeFeed/lib/screens/NGO/drawerscreen.dart" />
+        <option value="$PROJECT_DIR$/FreeFeed/lib/screens/users/drawerscreen.dart" />
         <option value="$PROJECT_DIR$/FreeFeed/lib/screens/NGO/homescreen.dart" />
+        <option value="$PROJECT_DIR$/FreeFeed/lib/main.dart" />
+        <option value="$PROJECT_DIR$/FreeFeed/lib/widgets/messages.dart" />
+        <option value="$PROJECT_DIR$/FreeFeed/lib/models/NGO.dart" />
+        <option value="$PROJECT_DIR$/FreeFeed/lib/widgets/new_message.dart" />
+        <option value="$PROJECT_DIR$/FreeFeed/lib/screens/authenticate/background.dart" />
+        <option value="$PROJECT_DIR$/FreeFeed/lib/screens/authenticate/auth_screen.dart" />
+        <option value="$PROJECT_DIR$/FreeFeed/lib/widgets/conversationList.dart" />
+        <option value="$PROJECT_DIR$/FreeFeed/lib/screens/users/chatswithngo.dart" />
+        <option value="$PROJECT_DIR$/FreeFeed/lib/screens/users/home_screen.dart" />
       </list>
     </option>
   </component>
@@ -201,6 +228,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -281,7 +309,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -334,10 +361,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.3966443" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.4147651" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Designer" order="4" />
@@ -345,12 +371,12 @@
       <window_info id="Capture Tool" order="6" />
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="0" weight="0.3286119" />
-      <window_info anchor="bottom" id="Dart Analysis" order="1" weight="0.3286119" />
+      <window_info active="true" anchor="bottom" id="Dart Analysis" order="1" visible="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Version Control" order="2" weight="0.3286119" />
       <window_info anchor="bottom" id="TODO" order="3" weight="0.3286119" />
       <window_info anchor="bottom" id="Terminal" order="4" weight="0.3286119" />
       <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Run" order="6" weight="0.3286119" />
       <window_info anchor="bottom" id="Debug" order="7" />
       <window_info anchor="bottom" id="Find" order="8" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
@@ -391,16 +417,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/FreeFeed/lib/screens/auth_screen.dart" />
-    <entry file="file://$PROJECT_DIR$/FreeFeed/lib/widgets/new_message.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/FreeFeed/lib/widgets/donation_toast.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -428,15 +444,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FreeFeed/lib/screens/users/map_ngo.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/FreeFeed/lib/screens/users/donateform.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -447,23 +454,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FreeFeed/lib/main.dart">
+    <entry file="file://$PROJECT_DIR$/FreeFeed/lib/screens/NGO/accept_request.dart" />
+    <entry file="file://$PROJECT_DIR$/FreeFeed/lib/screens/NGO/donationrequestlist.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="44" column="69" selection-start-line="44" selection-start-column="69" selection-end-line="44" selection-end-column="69" />
-          <folding>
-            <element signature="e#0#54#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FreeFeed/lib/widgets/messages.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="22" column="51" selection-start-line="22" selection-start-column="51" selection-end-line="22" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="221">
+          <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -471,26 +466,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FreeFeed/lib/screens/users/home_screen.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="31" column="52" selection-start-line="31" selection-start-column="52" selection-end-line="31" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#64#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FreeFeed/lib/screens/users/chat_screen.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -506,40 +481,178 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/FreeFeed/lib/widgets/auth_form.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1632">
-          <caret line="98" column="22" selection-start-line="98" selection-start-column="22" selection-end-line="98" selection-end-column="22" />
+        <state relative-caret-position="1666">
+          <caret line="100" column="22" selection-start-line="100" selection-start-column="22" selection-end-line="100" selection-end-column="22" />
           <folding>
             <element signature="e#0#17#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FreeFeed/lib/screens/authenticate/auth_screen.dart">
+    <entry file="file://$PROJECT_DIR$/FreeFeed/lib/widgets/custom_dialog.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="53" column="6" selection-start-line="53" selection-start-column="6" selection-end-line="53" selection-end-column="6" />
+        <state relative-caret-position="255">
+          <caret line="105" column="38" selection-start-line="105" selection-start-column="38" selection-end-line="105" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FreeFeed/lib/models/users.dart">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FreeFeed/lib/screens/users/drawerscreen.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_firestore_platform_interface-3.0.1/lib/src/platform_interface/platform_interface_document_snapshot.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-92">
+          <caret line="81" column="6" selection-start-line="81" selection-start-column="6" selection-end-line="81" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FreeFeed/lib/screens/users/map_ngo.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2346">
+          <caret line="151" column="23" selection-start-line="151" selection-start-column="23" selection-end-line="151" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FreeFeed/lib/main.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="56" column="44" selection-start-line="56" selection-start-column="44" selection-end-line="56" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FreeFeed/lib/models/NGO.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FreeFeed/lib/screens/users/chat_screen.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-27">
+          <caret line="12" column="2" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FreeFeed/lib/screens/NGO/accept_request.dart">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FreeFeed/lib/screens/NGO/donationrequestlist.dart">
+    <entry file="file://$PROJECT_DIR$/FreeFeed/lib/widgets/new_message.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+          <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/FreeFeed/lib/screens/NGO/homescreen.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="173" column="25" lean-forward="true" selection-start-line="173" selection-start-column="25" selection-end-line="173" selection-end-column="25" />
+        <state relative-caret-position="306">
+          <caret line="117" column="22" selection-start-line="117" selection-start-column="22" selection-end-line="117" selection-end-column="22" />
           <folding>
             <element signature="e#0#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FreeFeed/lib/screens/NGO/drawerscreen.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-68">
+          <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FreeFeed/lib/screens/authenticate/background.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FreeFeed/lib/screens/users/homepage.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="29" column="33" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FreeFeed/lib/screens/users/get_nearbyngo.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-731">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FreeFeed/lib/screens/authenticate/auth_screen.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FreeFeed/lib/widgets/messages.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="55" lean-forward="true" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="55" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FreeFeed/lib/widgets/conversationList.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="54" column="87" selection-start-line="54" selection-start-column="87" selection-end-line="54" selection-end-column="87" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FreeFeed/lib/screens/users/chatswithngo.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1588">
+          <caret line="111" selection-start-line="111" selection-end-line="111" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FreeFeed/lib/screens/users/home_screen.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1649">
+          <caret line="97" column="28" lean-forward="true" selection-start-line="97" selection-start-column="28" selection-end-line="97" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#64#0" expanded="true" />
           </folding>
         </state>
       </provider>

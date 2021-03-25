@@ -6,6 +6,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 class NewMessage extends StatefulWidget {
   @override
   _NewMessageState createState() => _NewMessageState();
+
+  final String userId;
+  final String ngoId;
+
+  NewMessage(this.userId, this.ngoId);
 }
 
 class _NewMessageState extends State<NewMessage> {
@@ -16,7 +21,7 @@ class _NewMessageState extends State<NewMessage> {
     FocusScope.of(context).unfocus();
     final user = FirebaseAuth.instance.currentUser;
     final userData = await FirebaseFirestore.instance.collection('users').doc(user.uid).get();
-    FirebaseFirestore.instance.collection('chat').add({
+    FirebaseFirestore.instance.collection('${widget.ngoId}-${widget.userId}').add({
       'text': _enteredMessage,
       'createdAt': Timestamp.now(),
       'userId': user.uid,

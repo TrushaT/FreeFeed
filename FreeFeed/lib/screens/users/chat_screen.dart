@@ -7,6 +7,11 @@ import 'package:FreeFeed/widgets/messages.dart';
 import 'package:FreeFeed/widgets/new_message.dart';
 
 class ChatScreen extends StatefulWidget {
+  final String userId;
+  final String ngoId;
+
+  ChatScreen(this.userId, this.ngoId);
+
   @override
   _ChatScreenState createState() => _ChatScreenState();
 }
@@ -24,9 +29,9 @@ class _ChatScreenState extends State<ChatScreen> {
         child: Column(
           children: <Widget>[
             Expanded(
-              child: Messages(),
+              child: Messages(widget.userId, widget.ngoId),
             ),
-            NewMessage(),
+            NewMessage(widget.userId, widget.ngoId),
           ],
         ),
         
