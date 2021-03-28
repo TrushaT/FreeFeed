@@ -1,3 +1,4 @@
+import 'package:FreeFeed/screens/users/chat_screen.dart';
 import 'package:flutter/material.dart';
 
 
@@ -7,45 +8,91 @@ class NgoDetails extends StatefulWidget {
 }
 
 class NgoDetailsState extends State<NgoDetails> {
-
-Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: CustomScrollView(
-          slivers: <Widget>[
-            SliverAppBar(
-              title: Text('NGO Details'),
-              backgroundColor: Colors.cyan[300],
-              expandedHeight: 350.0,
-              flexibleSpace: FlexibleSpaceBar(
-                //background: ngo.png,
-              ),
-            ),
-            SliverFixedExtentList(
-              itemExtent: 60.00,
-              delegate: SliverChildListDelegate([
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text("Ngo Name", style: TextStyle(fontSize: 40, color: Colors.black),),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text("Ngo Details", style: TextStyle(fontSize: 24,color: Colors.black),),
-                ),
-               
-              Padding(
-                  padding: const EdgeInsets.all(8.0),
-                child: RaisedButton(
-                  shape: StadiumBorder(),
-                  child: Text("Chat"),
-                  color: Colors.cyan[100],
-                  onPressed: () {},
-                ),),
-              ]),
-            )
-          ],
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+        appBar: new AppBar(
+          title: new Text('NGO details'),
         ),
-      ),
-    );
+        body: new ListView(
+            children: <Widget>[
+              new Image.asset('assets/ngo1.jpg',
+              height: 300,
+              fit:BoxFit.fitHeight,),
+              new Container(
+                padding: const EdgeInsets.all(32.0),
+                child: new Row(
+                  children: [
+                    new Expanded(
+                      child: new Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          // Code to create the view for name.
+                          new Container(
+                            padding: const EdgeInsets.only(bottom: 8.0),
+                            child: new Text(
+                              "Khaana Chahiye Organization" ,
+                              style: new TextStyle(
+                                fontSize: 22,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ),
+                          new Row(
+                            children: [
+                            new Icon(
+                            Icons.phone,
+                            color: Colors.green,
+                            size: 24,
+                            ),
+                            new Text('+919876543210',
+                            style: new TextStyle(
+                                fontSize: 20,
+                                //fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                              ),)
+                          ],)
+                          
+                        ],
+                      ),
+                    ),
+                    // Icon to indicate chat.
+                    new IconButton(
+                      color: Colors.blue,
+                      icon: const Icon(Icons.message_rounded),
+                     //onPressed: ChatScreen(),
+                      ),
+                  ],
+                ),
+              ),
+               new Expanded(
+                 child: new Container(
+                  padding: const EdgeInsets.all(32.0),
+                  child: new Row (
+                    children: [
+                      new Icon(
+                            Icons.location_pin,
+                            color: Colors.red,
+                            size: 24,
+                      ),
+                    new Text('T.P.S Road, Borivali(West),Mumbai.',
+                    //overflow: TextOverflow.ellipsis,
+                      style: new TextStyle(
+                                fontSize: 20,
+                                //fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                              ),
+                      softWrap: true,
+                  )
+                ]
+              )
+              )
+               )
+            ]
+        )
+     );
   }
+
+
 }

@@ -40,7 +40,7 @@ class _NGOHomeScreenState extends State<NGOHomeScreen> {
     print("INside build NGO home screen");
 
     return Scaffold(
-      appBar: AppBar(
+    /*   appBar: AppBar(
         title: Text('Donation Requests'),
         actions: [
 //          FlatButton(
@@ -54,7 +54,7 @@ class _NGOHomeScreenState extends State<NGOHomeScreen> {
                 FirebaseAuth.instance.signOut();
               }),
         ],
-      ),
+      ), */
       body: Padding(
         padding: const EdgeInsets.fromLTRB(10, 50, 10, 10),
         child: StreamBuilder(
@@ -115,7 +115,7 @@ class _NGOHomeScreenState extends State<NGOHomeScreen> {
                   });
             }),
       ),
-      drawer: DrawerScreen(widget.role),
+      //drawer: DrawerScreen(widget.role),
     );
   }
 }

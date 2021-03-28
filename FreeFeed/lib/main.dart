@@ -1,3 +1,4 @@
+import 'package:FreeFeed/screens/NGO/bottomnav.dart';
 import 'package:FreeFeed/screens/NGO/homescreen.dart';
 // import 'package:FreeFeed/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -52,7 +53,7 @@ class MyApp extends StatelessWidget {
                     var role = futureSnapshot.data.data()['role'];
                     print('Role:' + role);
                     if (role == 'ngo') {
-                      return NGOHomeScreen(role);
+                      return BottomNav(role);
                     }
                     return HomeScreen(role);
                   });
