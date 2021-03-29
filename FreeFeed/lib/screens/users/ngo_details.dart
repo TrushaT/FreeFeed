@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 
 
 class NgoDetails extends StatefulWidget {
+  String userId;
+  String ngoId;
   @override
   NgoDetailsState createState() => NgoDetailsState();
 }
@@ -44,7 +46,7 @@ class NgoDetailsState extends State<NgoDetails> {
                             new Icon(
                             Icons.phone,
                             color: Colors.green,
-                            size: 24,
+                            size: 26,
                             ),
                             new Text('+919876543210',
                             style: new TextStyle(
@@ -58,11 +60,14 @@ class NgoDetailsState extends State<NgoDetails> {
                       ),
                     ),
                     // Icon to indicate chat.
-                    new IconButton(
-                      color: Colors.blue,
-                      icon: const Icon(Icons.message_rounded),
-                     //onPressed: ChatScreen(),
-                      ),
+                    new FloatingActionButton(
+                          onPressed: () {
+                           Navigator.of(context).push(
+                              MaterialPageRoute(builder: (_) => ChatScreen(widget.userId, widget.ngoId)));
+                        },
+                        child: const Icon(Icons.message_rounded),
+                       backgroundColor: Colors.green,
+                    ),
                   ],
                 ),
               ),
@@ -74,7 +79,7 @@ class NgoDetailsState extends State<NgoDetails> {
                       new Icon(
                             Icons.location_pin,
                             color: Colors.red,
-                            size: 24,
+                            size: 26,
                       ),
                     new Text('T.P.S Road, Borivali(West),Mumbai.',
                     //overflow: TextOverflow.ellipsis,
