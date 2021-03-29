@@ -1,3 +1,4 @@
+import 'package:FreeFeed/screens/NGO/donationhistory.dart';
 import 'package:FreeFeed/screens/NGO/homescreen.dart';
 import 'package:FreeFeed/screens/authenticate/auth_screen.dart';
 import 'package:FreeFeed/screens/users/chatswithngo.dart';
@@ -88,7 +89,7 @@ class _BottomNavState extends State<BottomNav> {
           children: <Widget>[
             NGOHomeScreen(widget.role),
             
-            //DonationHistory(),
+            DonationHistory(),
             ChatwithNgo(widget.role),
           ],
         ),
