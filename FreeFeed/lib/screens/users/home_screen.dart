@@ -12,7 +12,12 @@ import 'get_nearbyngo.dart';
 import 'package:FreeFeed/models/NGO.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:location/location.dart';
-import 'donation_history.dart';
+// import 'donation_history.dart';
+import 'donationhistory.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'dart:async';
+import 'package:firebase_messaging/firebase_messaging.dart';
+
 
 class HomeScreen extends StatefulWidget {
   final String role;
@@ -27,9 +32,36 @@ class _HomeScreenState extends State<HomeScreen> {
   int _currentIndex = 0;
   PageController _pageController;
   List<NGO_User> nearbyngos;
+  final FirebaseMessaging fcm = FirebaseMessaging();
 
   @override
   void initState() {
+    fcm.configure(
+      onMessage: (Map<String, dynamic> message) async {
+        print("onMessage: $message");
+        showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+            content: ListTile(
+              title: Text(message['notification']['title']),
+              subtitle: Text(message['notification']['body']),
+            ),
+            actions: <Widget>[
+              FlatButton(
+                child: Text('Ok'),
+                onPressed: () => Navigator.of(context).pop(),
+              ),
+            ],
+          ),
+        );
+      },
+      onLaunch: (Map<String, dynamic> message) async {
+        print("onLaunch: $message");
+      },
+      onResume: (Map<String, dynamic> message) async {
+        print("onResume: $message");
+      },
+    );
     super.initState();
     _pageController = PageController();
     getPermissions();

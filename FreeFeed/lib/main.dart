@@ -12,6 +12,8 @@ import './screens/users/home_screen.dart';
 import 'package:FreeFeed/widgets/auth_service.dart';
 import 'package:FreeFeed/models/users.dart';
 import './widgets/loading.dart';
+import 'widgets/notification.dart';
+import 'dart:async';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,6 +22,8 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
+    final changeNotifier = StreamController.broadcast();
+
   @override
   Widget build(BuildContext context) {
     print("MAIN BUILD");

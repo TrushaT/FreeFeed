@@ -35,9 +35,6 @@ class _DonationHistoryState extends State<DonationHistory> {
   Widget build(BuildContext context) {
     print(donationList);
     return Scaffold(
-        // appBar: AppBar(
-        //   title: Text('Donation History'),
-        // ),
         body: _isLoading ? Center(
           child: CircularProgressIndicator(),
         )

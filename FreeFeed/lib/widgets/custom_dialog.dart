@@ -4,6 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'donation_toast.dart';
+import 'package:FreeFeed/screens/users/home_screen.dart';
+import 'dart:async';
+import 'package:dio/dio.dart';
+import 'package:http/http.dart';
+import 'dart:convert';
 
 class CustomDialogBox extends StatefulWidget {
   final id;
@@ -18,9 +23,16 @@ class CustomDialogBox extends StatefulWidget {
 }
 
 class _CustomDialogBoxState extends State<CustomDialogBox> {
+  var postUrl = "https://fcm.googleapis.com/fcm/send";
+
   final FirebaseAuth auth = FirebaseAuth.instance;
   CustomToast toast = CustomToast();
   String username;
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
 
   getcurrentngoid() {
     final User user = auth.currentUser;
@@ -35,6 +47,82 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
         .get();
     print(ref.data()['ngoid']);
     return ref.data()['ngoid'];
+  }
+
+  getngoname(ngo) async {
+    DocumentSnapshot ref = await FirebaseFirestore.instance
+        .collection('users')
+        .doc(ngo)
+        .get();
+    print(ref.data()['username']);
+    return ref.data()['username'];
+  }
+
+  Future<void> sendNotification(ngo) async {
+    var token = await getToken();
+    var ngo_name = await getngoname(ngo);
+
+    print('token : $token');
+
+    try {
+      var data = {
+        "notification": {
+          "body": " $ngo_name has accepted your request",
+          "title": "Donation Request accepted !",
+        },
+        "priority": "high",
+        "data": {
+          "click_action": "FLUTTER_NOTIFICATION_CLICK",
+          "id": "1",
+          "status": "done"
+        },
+        "to": "$token"
+      };
+
+      final headers = {
+        'content-type': 'application/json',
+        'Authorization':
+            'key=AAAA_4hFHRA:APA91bGtA6Z8GbOdjXitBDyVwCDbum7xG1CxM0qu_6Qb5O43cOI5flqL3s0h4vMpSwVWLE_0v-np2Jdgmi7kwdSt0AeMYosGPr3Ib3mvwrclGSWXCfiVcL6f8T5kliuCsKhd8KkxY35T'
+      };
+
+      var client = new Client();
+      var response =
+          await client.post(postUrl, headers: headers, body: json.encode(data));
+      print(response.body);
+    } catch (e) {
+      print(e);
+    }
+
+    // BaseOptions options = new BaseOptions(
+    //   connectTimeout: 5000,
+    //   receiveTimeout: 3000,
+    //   headers: headers,
+    // );
+    // try {
+    //   print('IN TRY');
+    //   final response = await Dio().post(postUrl, data: data,options:Options(headers: headers));
+    //   print(response);
+    //   if (response.statusCode == 200) {
+    //     toast.showToast('Request Sent To Driver', Colors.blue, Colors.white);
+    //   } else {
+    //     print('notification sending failed');
+    //     // on failure do sth
+    //   }
+    // } catch (e) {
+    //   print('ERROR');
+    //   print('exception $e');
+    // }
+  }
+
+  Future<String> getToken() async {
+    var token;
+    DocumentSnapshot ref = await FirebaseFirestore.instance
+        .collection('donations')
+        .doc(widget.id)
+        .get();
+
+    token = ref.data()['token'];
+    return token;
   }
 
   @override
@@ -105,13 +193,16 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                             });
                             ngo = await getngo();
                             if (ngo == getcurrentngoid()) {
+                              sendNotification(ngo);
                               toast.showToast('Donation request accepted',
                                   Colors.blue, Colors.white);
+                            } else {
+                              toast.showToast(
+                                  'Sorry ! Request accepted by another Ngo',
+                                  Colors.red,
+                                  Colors.white);
                             }
-                            else{
-                               toast.showToast('Sorry ! Request accepted by another Ngo',
-                                  Colors.red, Colors.white);
-                            }
+
                             Navigator.of(context).pop();
                           },
                           child: Text('Accept'),

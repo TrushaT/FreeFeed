@@ -8,6 +8,7 @@ import '../NGO/request_ngo.dart';
 import '../NGO/donationrequestlist.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:FreeFeed/models/NGO.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 
 class DonationForm extends StatefulWidget {
   @override
@@ -18,7 +19,6 @@ class _DonationFormState extends State<DonationForm> {
   String word;
   String description;
   String food_quantity;
-
   final _formKey = GlobalKey<FormState>();
 
   final textdescription = new TextEditingController();
@@ -29,6 +29,21 @@ class _DonationFormState extends State<DonationForm> {
   List<NGO_User> nearby_ngo_list;
   String latitude;
   String longitude;
+  String token;
+  final FirebaseMessaging fcm = FirebaseMessaging();
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  savedevicetoken() async {
+    String fcmToken = await fcm.getToken();
+    await FirebaseFirestore.instance
+        .collection('donations')
+        .doc(word)
+        .update({'token': fcmToken});
+  }
 
   // final User donor_user = FirebaseAuth.instance.currentUser;
   getlocation() async {
@@ -52,6 +67,7 @@ class _DonationFormState extends State<DonationForm> {
       "food_quantity": food_quantity,
       "ngoid": "tbd",
       "status": "requested",
+      "token": "null"
     };
     documentReference.set(product).whenComplete(() => print("Posted Data!"));
     setState(() {
@@ -63,7 +79,6 @@ class _DonationFormState extends State<DonationForm> {
     print('inside submitform');
 
     if (_formKey.currentState.validate()) {
-
       Donation donationForm =
           Donation(textdescription.text, textfood_quantity.text);
     }
@@ -119,13 +134,8 @@ class _DonationFormState extends State<DonationForm> {
                               await postData();
                               _submitForm();
                               await notifyNGOService().getNGOs(word);
-                              //     .then((value) {
-                              //   if (value != null)
-                              //     value.forEach(
-                              //         (item) => nearby_ngo_list.add(item));
-                              // });
-                              // print(nearby_ngo_list);
-                              // CurrentDonationList(nearby_ngo_list, word);
+                              await savedevicetoken();
+
                               toast.showToast('Donation requested',
                                   Colors.green, Colors.white);
                             },

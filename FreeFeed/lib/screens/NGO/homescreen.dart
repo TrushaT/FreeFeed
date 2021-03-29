@@ -21,8 +21,7 @@ class NGOHomeScreen extends StatefulWidget {
 }
 
 class _NGOHomeScreenState extends State<NGOHomeScreen> {
-  CollectionReference service =
-      FirebaseFirestore.instance.collection('Current');
+  
   final FirebaseAuth auth = FirebaseAuth.instance;
   String userId;
   CurrentDonationService _currentDonationService = CurrentDonationService();
