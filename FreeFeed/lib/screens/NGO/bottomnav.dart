@@ -1,9 +1,8 @@
-import 'package:FreeFeed/screens/NGO/donationhistory.dart';
+// import 'package:FreeFeed/screens/NGO/donationhistory.dart';
 import 'package:FreeFeed/screens/NGO/homescreen.dart';
 import 'package:FreeFeed/screens/authenticate/auth_screen.dart';
 import 'package:FreeFeed/screens/users/chatswithngo.dart';
 import 'package:FreeFeed/screens/users/drawerscreen.dart';
-import 'package:FreeFeed/screens/users/ngodetails.dart';
 //import 'map_ngo.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -15,6 +14,7 @@ import 'package:FreeFeed/models/NGO.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:location/location.dart';
 //import 'donation_history.dart';
+import 'ngo_history.dart';
 
 class BottomNav extends StatefulWidget {
   final String role;

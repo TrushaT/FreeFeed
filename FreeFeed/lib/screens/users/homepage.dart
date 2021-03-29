@@ -19,10 +19,14 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List<NGO_User> nearby_ngolist;
+  final FirebaseAuth auth = FirebaseAuth.instance;
+  String userid = '';
+
 
   @override
   void initState() {
     getnearbyNGOs();
+    getcurrentuser();
     super.initState();
   }
 
@@ -31,6 +35,13 @@ class _HomePageState extends State<HomePage> {
     setState(() {
       nearby_ngolist = nearby_ngolist;
     });
+  }
+
+  getcurrentuser() async {
+     final User user = auth.currentUser;
+     setState(() {
+       userid = user.uid;
+     });
   }
 
   @override
@@ -76,7 +87,7 @@ class _HomePageState extends State<HomePage> {
                               splashColor: Colors.cyan[100],
                               onTap: () {
                                 Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (_) => NgoDetails()));
+                                    builder: (_) => NgoDetails(userid,nearby_ngolist[index].uid)));
                               },
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,

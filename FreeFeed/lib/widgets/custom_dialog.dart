@@ -93,25 +93,7 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
       print(e);
     }
 
-    // BaseOptions options = new BaseOptions(
-    //   connectTimeout: 5000,
-    //   receiveTimeout: 3000,
-    //   headers: headers,
-    // );
-    // try {
-    //   print('IN TRY');
-    //   final response = await Dio().post(postUrl, data: data,options:Options(headers: headers));
-    //   print(response);
-    //   if (response.statusCode == 200) {
-    //     toast.showToast('Request Sent To Driver', Colors.blue, Colors.white);
-    //   } else {
-    //     print('notification sending failed');
-    //     // on failure do sth
-    //   }
-    // } catch (e) {
-    //   print('ERROR');
-    //   print('exception $e');
-    // }
+  
   }
 
   Future<String> getToken() async {

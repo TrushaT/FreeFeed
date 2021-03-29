@@ -12,22 +12,22 @@ class _DonationHistoryState extends State<DonationHistory> {
   CollectionReference donations =
       FirebaseFirestore.instance.collection('donations');
   User user;
-  String userId;
+  String ngoId;
 
-  String ngousername = '';
+  String username = '';
 
   @override
   void initState() {
     user = auth.currentUser;
-    userId = user.uid;
+    ngoId = user.uid;
     super.initState();
   }
 
-  getngoname(ngo) async {
+  getusername(user) async {
     DocumentSnapshot ref =
-        await FirebaseFirestore.instance.collection('users').doc(ngo).get();
+        await FirebaseFirestore.instance.collection('users').doc(user).get();
     setState(() {
-      ngousername = ref.data()['username'];
+      username = ref.data()['username'];
     });
   }
 
@@ -50,7 +50,7 @@ class _DonationHistoryState extends State<DonationHistory> {
                   final List donations = snapshot.data.docs;
 
                   final donationList = donations
-                      .where((donation) => donation['userid'] == userId)
+                      .where((donation) => donation['ngoid'] == ngoId)
                       .toList();
 
                   print(donationList.length);
@@ -79,14 +79,11 @@ class _DonationHistoryState extends State<DonationHistory> {
                                           color: Colors.black),
                                     ),
                                     title: Text(
-                                      // "Introduction to Driving",
                                       "${donationList[i]['decription']}",
                                       style: TextStyle(
                                           color: Colors.black,
                                           fontWeight: FontWeight.bold),
                                     ),
-                                    // subtitle: Text("Intermediate", style: TextStyle(color: Colors.white)),
-
                                     subtitle: Row(
                                       children: <Widget>[
                                         Icon(Icons.calendar_today),
@@ -96,50 +93,34 @@ class _DonationHistoryState extends State<DonationHistory> {
                                                 TextStyle(color: Colors.black))
                                       ],
                                     ),
-                                    trailing: donationList[i]['status'] ==
-                                            'accepted'
-                                        ? Column(children: <Widget>[
-                                            RaisedButton(
-                                                padding:
-                                                    const EdgeInsets.all(8.0),
-                                                textColor: Colors.white,
-                                                color: Colors.green,
-                                                onPressed: () async {
-                                                  await getngoname(
-                                                      donationList[i]['ngoid']);
-                                                  showDialog(
-                                                    context: context,
-                                                    builder: (context) =>
-                                                        AlertDialog(
-                                                      content: ListTile(
-                                                        title: Text(
-                                                            "Accepted by:$ngousername "),
-                                                        subtitle: Text(
-                                                            "Quantity: ${donationList[i]['food_quantity']}"),
-                                                      ),
-                                                      actions: <Widget>[
-                                                        FlatButton(
-                                                          child: Text('Ok'),
-                                                          onPressed: () =>
-                                                              Navigator.of(
-                                                                      context)
-                                                                  .pop(),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  );
-                                                },
-                                                child: Text('Accepted'))
-                                          ])
-                                        : Column(children: <Widget>[
-                                            RaisedButton(
-                                                padding:
-                                                    const EdgeInsets.all(8.0),
-                                                textColor: Colors.white,
-                                                color: Colors.red,
-                                                onPressed: () async {},
-                                                child: Text('Pending'))
-                                          ]),
+                                    trailing:
+                                        // Column(children: <Widget>[
+                                        Icon(Icons.room_service_outlined,
+                                            color: Colors.black, size: 30.0),
+                                       
+                                    onTap: () {
+                                      showDialog(
+                                          context: context,
+                                          builder: (context) => AlertDialog(
+                                                content: ListTile(
+                                                  title: Text(
+                                                      "Request by : User "),
+                                                  subtitle: Text(" Quantity: ${donationList[i]['food_quantity']}"),
+                                                ),
+                                                actions: <Widget>[
+                                                  FlatButton(
+                                                    child: Text('Ok'),
+                                                    onPressed: () =>
+                                                        Navigator.of(context)
+                                                            .pop(),
+                                                  ),
+                                                ],
+                                              ));
+
+                                      
+                                    },
+
+                                    // ]),
                                   ))),
                           itemCount: donationList.length,
                         );

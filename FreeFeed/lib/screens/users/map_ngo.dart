@@ -149,7 +149,7 @@ class _NGOLocationState extends State<NGOLocation> {
                     MaterialPageRoute(builder: (_) => DonationForm())),
                     
         ),
-        drawer: UserDrawerScreen(),
+        // drawer: UserDrawerScreen(),
         ));
 
   }
